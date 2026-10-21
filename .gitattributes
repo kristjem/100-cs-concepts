@@ -1,0 +1,17 @@
+# Bruk LF for tekstfiler
+* text=auto
+
+# C# og prosjektfiler
+*.cs text eol=lf
+*.csproj text eol=lf
+*.sln text eol=lf
+
+# Dev Container
+Dockerfile text eol=lf
+*.json text eol=lf
+
+# Dokumentasjon
+*.md text eol=lf
+
+# Shell-skript
+*.sh text eol=lf

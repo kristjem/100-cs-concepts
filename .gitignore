@@ -1,0 +1,27 @@
+# .NET - genererte filer
+**/bin/
+**/obj/
+
+# Kompilerte filer
+*.dll
+*.exe
+*.pdb
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# VS Code - lokale innstillinger
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Operativsystem
+.DS_Store
+Thumbs.db
+
+# Midlertidige filer
+*.log
+*.tmp
