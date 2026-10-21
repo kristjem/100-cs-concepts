@@ -2,7 +2,7 @@
 
 Et praktisk læringsprosjekt for å utforske 100 konsepter innen C# og .NET.
 
-Prosjektet tar utgangspunkt i YouTube-videoen **«Master C# in 100 Minutes – 100 Concepts Every Developer Should Know»**, der hvert konsept implementeres som et eget kodeeksempel.
+Prosjektet tar utgangspunkt i YouTube-videoen **[«Master C# in 100 Minutes – 100 Concepts Every Developer Should Know»](https://www.youtube.com/watch?v=yVeFlmihyGQ&t=863s)**, der hvert konsept implementeres som et eget kodeeksempel.
 
 ## 🎯 Formål
 
@@ -63,11 +63,9 @@ C#-utvidelsene installeres automatisk inne i containeren via `devcontainer.json`
 **1. Klon repositoryet**
 
 ```bash
-git clone https://github.com/<brukernavn>/100-cs-concepts.git
+git clone https://github.com/kristjem/100-cs-concepts.git
 cd 100-cs-concepts
 ```
-
-Bytt ut `<brukernavn>` med riktig GitHub-brukernavn.
 
 **2. Åpne prosjektet i VS Code**
 
@@ -209,7 +207,7 @@ Klasser, metoder og variabler navngis i hovedsak på norsk, mens etablerte progr
 
 ## 📺 Inspirasjon og kilder
 
-- YouTube: *Master C# in 100 Minutes – 100 Concepts Every Developer Should Know*
+- YouTube: [«Master C# in 100 Minutes – 100 Concepts Every Developer Should Know»](https://www.youtube.com/watch?v=yVeFlmihyGQ&t=863s)
 - [Microsoft Learn – C#](https://learn.microsoft.com/nb-no/dotnet/csharp/)
 - [Development Containers](https://containers.dev/)
 - [VS Code – Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers)
