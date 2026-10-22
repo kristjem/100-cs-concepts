@@ -13,8 +13,32 @@ public static class Variabler
         age = 30;
         Console.WriteLine($"Updated Age: {age}");
 
+        // DOUBLE: 64-bit binært flyttall
         double pi = 3.14;
+
         Console.WriteLine($"Pi: {pi}");
+        Console.WriteLine($"DOUBLE: 0.1 + 0.2 == 0.3: {0.1 + 0.2 == 0.3}");
+        // False
+
+
+        // DECIMAL: 128-bit desimalrepresentasjon
+        // DECIMAL brukes ofte for økonomiske beregninger på grunn av høy presisjon
+        decimal pris = 29.90m;
+
+        Console.WriteLine($"Pris: {pris}");
+        Console.WriteLine($"DECIMAL: 0.1m + 0.2m == 0.3m: {0.1m + 0.2m == 0.3m}");
+        // True
+
+        decimal veldigPresis = 0.000000000123456789m;
+        Console.WriteLine($"Presis decimal: {veldigPresis}");
+
+
+        // FLOAT: 32-bit binært flyttall
+        float temperatur = 23.5f;
+
+        Console.WriteLine($"Temperatur: {temperatur}");
+        Console.WriteLine($"FLOAT: 0.1f + 0.2f == 0.3f: {0.1f + 0.2f == 0.3f}");
+        // True!
 
         string name = "Alice";
         Console.WriteLine($"Name: {name}");
@@ -25,14 +49,6 @@ public static class Variabler
         char grade = 'A'; // char er en enkelt tegnvariabel
         Console.WriteLine($"Grade: {grade}");
 
-        decimal price = 29.90m; // m betyr at det er en decimal-litteral
-        Console.WriteLine($"Price: {price}");
-
-        decimal veryPrecise = 0.000000000123456789m; // m betyr at det er en decimal-litteral
-        Console.WriteLine($"Very Precise decimal: {veryPrecise}");
-
-        float temperature = 23.5f; // f betyr at det er en float-litteral
-        Console.WriteLine($"Temperature: {temperature}");
 
         string funfact = "decimal må ha 'm' bak tallet og float må ha 'f' bak tallet, fordi C# ellers antar at det er en double";
         Console.WriteLine($"Funfact: {funfact}");
