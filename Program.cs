@@ -10,6 +10,6 @@ Console.WriteLine($"Karakteren er {karakter}");
 
 */
 
-using Kontrollflyt;
+using Tid;
 
-ForLoop.loopStringArray(ForLoop.GetFruktArray());
+Tidsreise.tidsmaskin();
