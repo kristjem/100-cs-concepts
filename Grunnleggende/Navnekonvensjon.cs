@@ -4,6 +4,8 @@
 
 namespace Grunnleggende;
 
+// Instanser av en klasse har camelCase, f.eks. Elbil tesla = new Elbil(...)
+
 public static class Navnekonvensjon
 {
     public static void Kjor()
