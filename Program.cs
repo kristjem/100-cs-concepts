@@ -10,6 +10,6 @@ Console.WriteLine($"Karakteren er {karakter}");
 
 */
 
-using Tid;
+using Grunnleggende;
 
-Tidsreise.tidsmaskin();
+Null.Nullable();
