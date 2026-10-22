@@ -12,4 +12,4 @@ Console.WriteLine($"Karakteren er {karakter}");
 
 using Grunnleggende;
 
-Null.Nullable();
+TypeCasting.Kjor();
