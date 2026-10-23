@@ -30,6 +30,8 @@ Bil bil3 = new Bil("Ford", "Mondeo", 2014, Bil.DrivlinjeType.Diesel);
 Console.WriteLine($"{bil3.Merke}, {bil3.Modell}, {bil3.År}, {bil3.Drivlinje}");
 */
 
+/* //Arv
+
 using Objektorientering;
 
 ElbilUnderklasse elbil1 = new ElbilUnderklasse("Tesla", "Model X", 2018, 100, 500);
@@ -40,3 +42,39 @@ Console.WriteLine($"{hybridbil1.Merke}, {hybridbil1.Modell}, {hybridbil1.År}, {
 
 DieselbilUnderklasse dieselbil1 = new DieselbilUnderklasse("Volkswagen", "Passat", 2015, 60);
 Console.WriteLine($"{dieselbil1.Merke}, {dieselbil1.Modell}, {dieselbil1.År}, {dieselbil1.DrivstofftankLiter}, {dieselbil1.Drivstofftype}");
+*/
+
+using Objektorientering;
+
+BilKomposisjon naboensBil = new BilKomposisjon("Tesla", "Model X", 2016, new ElektriskDrivlinje(75));
+BilKomposisjon bilenMin = new BilKomposisjon("Tesla", "Model X", 2018, new ElektriskDrivlinje(100));
+BilKomposisjon konebilenMin = new BilKomposisjon("Skoda", "Fabia", 2009, new ForbrenningsDrivlinje(Drivstofftype.Bensin, 45, 4, 1.6, false));
+BilKomposisjon gamlebilenMin = new BilKomposisjon("Ford", "Mondeo", 2014, new ForbrenningsDrivlinje(Drivstofftype.Diesel, 60, 4, 1.6, true));
+BilKomposisjon bestefarsBil = new BilKomposisjon(
+    "Honda", "Jazz", 2011,
+    new HybridDrivlinje(
+        new ElektriskDrivlinje(1), // egentlig 0,6 kWh
+        new ForbrenningsDrivlinje(Drivstofftype.Bensin, 40, 4, 1.3, false)
+    )
+);
+
+List<BilKomposisjon> biler = new List<BilKomposisjon>();
+biler.Add(naboensBil);
+biler.Add(bilenMin);
+biler.Add(konebilenMin);
+biler.Add(bestefarsBil);
+biler.Add(gamlebilenMin);
+
+foreach (BilKomposisjon bil in biler)
+{
+    // Henter typen fra drivlinjens egen implementasjon.
+    string biltype = bil.Drivlinje.TypeNavn;
+
+    // Henter beskrivelsen fra drivlinjens egen implementasjon.
+    string beskrivelse = bil.Drivlinje.Beskriv();
+
+    // Setter sammen informasjonen om bilen.
+    Console.WriteLine(
+        $"{biltype}: {bil.Merke}, {bil.Modell}, {bil.År}, {beskrivelse}"
+    );
+}

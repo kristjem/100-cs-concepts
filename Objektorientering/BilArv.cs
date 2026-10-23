@@ -1,5 +1,12 @@
 // abstract betyr at klassen ikke kan instansieres direkte, kun arves fra
 // altså, man kan ikke opprette new BilAbstrakt direkte
+
+/*
+Med arv beskriver vi hva noe er:
+- En elbil er en bil.
+- En dieselbil er en bil.
+- En hybridbil er en bil.
+*/
 public abstract class BilAbstrakt // Bil er opptatt, derfor BilAbstrakt
 {
     // protected betyr at konstruktøren kun kan kalles fra denne klassen 
