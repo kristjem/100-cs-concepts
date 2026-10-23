@@ -77,4 +77,7 @@ foreach (BilKomposisjon bil in biler)
     Console.WriteLine(
         $"{biltype}: {bil.Merke}, {bil.Modell}, {bil.År}, {beskrivelse}"
     );
+    bil.Drivlinje.Start();
+    bil.Drivlinje.Stopp();
+    Console.WriteLine(); // Legger til en tom linje mellom hver bil for bedre lesbarhet.
 }

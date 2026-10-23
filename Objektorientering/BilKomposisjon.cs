@@ -14,6 +14,13 @@ public abstract class Drivlinje
     // Underklassene må selv implementere den.
     public abstract string TypeNavn { get; }
     public abstract string Beskriv();
+
+    public abstract void Start(); // Underklassene må implementere hvordan drivlinjen starter.
+    public virtual void Stopp() // virtual betyr at underklassene kan overstyre denne metoden hvis de ønsker det.
+    {
+        // Standard implementasjon for å stoppe drivlinjen.
+        Console.WriteLine("Kjøretøyet stoppet...");
+    }
 } // Drivlinje er abstrakt og kan ikke instansieres direkte, kun arves fra
 
 public enum Drivstofftype
@@ -47,6 +54,11 @@ public class ElektriskDrivlinje : Drivlinje
     // etter at objektet er konstruert.
 
     public override string TypeNavn => "ELBIL";
+
+    public override void Start()
+    {
+        Console.WriteLine("Kjøretøyet starter helt lydløst...");
+    }
     public override string Beskriv()
     {
         return $"Batteri {BatterikapasitetkWh} kWh";
@@ -77,6 +89,18 @@ public class ForbrenningsDrivlinje : Drivlinje
     public bool Turbo { get; }
 
     public override string TypeNavn => (Drivstofftype.Bensin == Drivstoff ? "BENSINBIL" : "DIESELBIL");
+    public override void Start()
+    {
+        Console.WriteLine("Kjøretøyet starter...VROOOM!");
+    }
+    public override void Stopp()
+    {
+        Console.WriteLine("Kjøretøyet slås av... putt-putt.");
+
+        // Kaller også standardimplementasjonen i Drivlinje.
+        base.Stopp();
+    }
+
     public override string Beskriv()
     {
         return $"{Drivstoff}, {DrivstofftankLiter}L tank, {SylinderAntall} sylindre ({MotorvolumLiter}L) {(Turbo ? "med turbo" : "uten turbo")}";
@@ -101,6 +125,20 @@ public class HybridDrivlinje : Drivlinje
     public ForbrenningsDrivlinje Forbrenning { get; }
 
     public override string TypeNavn => "HYBRIDBIL";
+
+    public override void Start()
+    {
+        int random = new Random().Next(2);
+        if (random == 0)
+        {
+            Elektrisk.Start();
+        }
+        else
+        {
+            Forbrenning.Start();
+        }
+    }
+
     public override string Beskriv()
     {
         return $"{Elektrisk.Beskriv()}, {Forbrenning.Beskriv()}";
@@ -173,6 +211,9 @@ foreach (BilKomposisjon bil in biler)
     Console.WriteLine(
         $"{biltype}: {bil.Merke}, {bil.Modell}, {bil.År}, {beskrivelse}"
     );
+    bil.Drivlinje.Start();
+    bil.Drivlinje.Stopp();
+    Console.WriteLine(); // Legger til en tom linje mellom hver bil for bedre lesbarhet.
 }
 
 */
